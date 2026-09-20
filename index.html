@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Construction Mania Zimbabwe | Building Today. Shaping Tomorrow.</title>
+<meta name="description" content="Construction Mania Zimbabwe - Professional Building, Civil Engineering, Infrastructure & Property Development across Zimbabwe.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        brand: { blue:'#0E8CE9', deep:'#0A6EBD', dark:'#07182B', navy:'#0B2139', yellow:'#FFC800', yellowdark:'#E5B000', orange:'#FF7A00' },
+      },
+      fontFamily: {
+        display:['Anton','sans-serif'],
+        head:['Archivo','sans-serif'],
+        body:['Inter','sans-serif']
+      },
+      boxShadow: {
+        hard:'8px 8px 0 #07182B',
+        hardSm:'5px 5px 0 #07182B',
+        hardYellow:'8px 8px 0 #FFC800',
+      }
+    }
+  }
+}
+</script>
+<style>
+*{ -webkit-tap-highlight-color:transparent; }
+html{ scroll-behavior:smooth; }
+body{ font-family:'Inter',sans-serif; background:#F6F8FB; color:#0B2139; overflow-x:hidden; }
+.font-display{ font-family:'Anton',sans-serif; letter-spacing:.01em; }
+.outline-white{ -webkit-text-stroke:2px #07182B; paint-order:stroke fill; text-shadow:5px 5px 0 #07182B; }
+.outline-yellow{ -webkit-text-stroke:2px #07182B; paint-order:stroke fill; text-shadow:6px 6px 0 #07182B; }
+.hero-bg{
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255,255,255,.18) 0 2px, transparent 3px),
+    radial-gradient(circle at 80% 15%, rgba(255,255,255,.15) 0 2px, transparent 3px),
+    linear-gradient(180deg, #0E8CE9 0%, #0A77CC 55%, #095EAA 100%);
+}
+.hero-grid{
+  background-image: linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+  background-size:42px 42px;
+  mask-image: radial-gradient(ellipse at center, black 60%, transparent 85%);
+}
+.stripe{ background: repeating-linear-gradient(-45deg, #07182B 0 18px, #FFC800 18px 36px); }
+.zig{ height:18px; background: linear-gradient(-45deg, transparent 12px, #FFC800 0) 0 0/24px 24px, linear-gradient(45deg, transparent 12px, #FFC800 0) 12px 0/24px 24px; }
+.btn-hard{ transition:.18s; }
+.btn-hard:hover{ transform:translate(-2px,-2px); box-shadow:10px 10px 0 #07182B; }
+.btn-hard:active{ transform:translate(3px,3px); box-shadow:2px 2px 0 #07182B; }
+.card-hover{ transition:.25s; }
+.card-hover:hover{ transform:translateY(-6px); }
+.nav-link{ position:relative; }
+.nav-link:after{ content:''; position:absolute; left:0; bottom:-4px; height:3px; width:0; background:#FFC800; border-radius:99px; transition:.25s; }
+.nav-link.active:after, .nav-link:hover:after{ width:100%; }
+.nav-link.active{ color:#0A6EBD; }
+.marquee{ display:flex; gap:0; width:max-content; animation:scroll 22s linear infinite; }
+@keyframes scroll{ to{ transform:translateX(-50%);} }
+@keyframes float{ 0%,100%{ transform:translateY(0)} 50%{ transform:translateY(-12px)} }
+.float{ animation:float 5s ease-in-out infinite; }
+.float2{ animation:float 6.5s ease-in-out infinite; animation-delay:.8s; }
+@keyframes hammer{ 0%,100%{ transform:rotate(-8deg)} 50%{ transform:rotate(8deg)} }
+.hammer-wiggle{ animation:hammer 3.5s ease-in-out infinite; transform-origin:70% 80%; }
+.reveal{ opacity:0; transform:translateY(28px); transition:.7s cubic-bezier(.2,.7,.2,1); }
+.reveal.in{ opacity:1; transform:none; }
+.tab-btn.active{ background:#07182B; color:#FFC800; border-color:#07182B; box-shadow:5px 5px 0 #FFC800; }
+.filter-btn.active{ background:#FFC800; color:#07182B; border-color:#07182B; box-shadow:4px 4px 0 #07182B; }
+.faq-a{ max-height:0; overflow:hidden; transition:max-height .4s ease; }
+.faq-item.open .faq-a{ max-height:300px; }
+.faq-item.open .faq-icon{ transform:rotate(45deg); background:#FFC800; color:#07182B; }
+.faq-icon{ transition:.25s; }
+input,select,textarea{ outline:none; }
+input:focus,select:focus,textarea:focus{ border-color:#0E8CE9 !important; box-shadow:0 0 0 4px rgba(14,140,233,.18); }
+.range{ -webkit-appearance:none; height:10px; border-radius:99px; background:linear-gradient(90deg,#FFC800 var(--p,30%), #E2E8F0 var(--p,30%)); border:2px solid #07182B; }
+.range::-webkit-slider-thumb{ -webkit-appearance:none; width:28px; height:28px; border-radius:50%; background:#07182B; border:3px solid #FFC800; cursor:pointer; box-shadow:0 4px 10px rgba(0,0,0,.3); }
+.dot{ width:10px; height:10px; border-radius:99px; background:#CBD5E1; transition:.25s; cursor:pointer; }
+.dot.active{ width:32px; background:#FFC800; border:2px solid #07182B; }
+.toast{ transform:translateY(120%); transition:.4s cubic-bezier(.2,.9,.2,1); }
+.toast.show{ transform:none; }
+.modal-bg{ background:rgba(7,24,43,.72); backdrop-filter:blur(6px); }
+.step-dot{ width:36px; height:36px; border-radius:99px; display:flex; align-items:center; justify-content:center; font-weight:800; border:2px solid #07182B; background:#fff; }
+.step.active .step-dot{ background:#FFC800; }
+.step.done .step-dot{ background:#22C55E; color:#fff; border-color:#07182B; }
+.lightbox-img{ max-height:62vh; object-fit:cover; }
+.tick{ width:26px; height:26px; border-radius:99px; background:#22C55E; color:#fff; display:flex; align-items:center; justify-content:center; flex-shrink:0; border:2px solid #07182B; }
+@media(max-width:640px){ .outline-white,.outline-yellow{ text-shadow:3px 3px 0 #07182B; } }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- TOPBAR -->
+<div class="bg-brand-dark text-white text-[13px] hidden md:block">
+  <div class="max-w-7xl mx-auto px-5 py-2.5 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-5">
+      <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-yellow"></i> 7946 Lion Road, Zimre Park, Ruwa, Zimbabwe</span>
+      <a href="mailto:constructionmaniazimbabwe@gmail.com" class="flex items-center gap-2 hover:text-brand-yellow"><i class="fa-solid fa-envelope text-brand-yellow"></i> constructionmaniazimbabwe@gmail.com</a>
+    </div>
+    <div class="flex items-center gap-4">
+      <span class="flex items-center gap-2"><i class="fa-solid fa-clock text-brand-yellow"></i> Mon–Sat: 7:30 – 17:30</span>
+      <a href="tel:+263771561749" class="bg-brand-yellow text-brand-dark font-bold px-3 py-1 rounded-full border border-brand-yellow hover:bg-white flex items-center gap-2"><i class="fa-solid fa-phone"></i> +263 771 561 749</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<header id="navbar" class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b-2 border-brand-dark transition-all">
+  <div class="max-w-7xl mx-auto px-4 sm:px-5 py-3 flex items-center justify-between gap-3">
+    <a href="#home" class="flex items-center gap-3">
+      <img src="https://www.designarena.ai/u/05f5c882-7940-4ecf-ac29-e68ea6759f6b" alt="Construction Mania Zimbabwe Logo" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl border-2 border-brand-dark object-cover shadow-hardSm bg-brand-blue">
+      <span class="leading-none">
+        <span class="font-display text-[19px] sm:text-[22px] block tracking-wide">CONSTRUCTION <span class="text-brand-deep">MANIA</span></span>
+        <span class="text-[11px] font-extrabold tracking-[.28em] bg-brand-dark text-brand-yellow px-2 py-[2px] rounded inline-block mt-1">— ZIMBABWE —</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-7 font-head font-700 font-bold text-[14.5px]">
+      <a href="#home" class="nav-link active" data-spy="home">Home</a>
+      <a href="#about" class="nav-link" data-spy="about">About</a>
+      <a href="#services" class="nav-link" data-spy="services">Services</a>
+      <a href="#projects" class="nav-link" data-spy="projects">Projects</a>
+      <a href="#why" class="nav-link" data-spy="why">Why Us</a>
+      <a href="#partners" class="nav-link" data-spy="partners">Partners</a>
+      <a href="#contact" class="nav-link" data-spy="contact">Contact</a>
+    </nav>
+    <div class="hidden lg:flex items-center gap-3">
+      <button onclick="openQuote()" class="btn-hard bg-brand-yellow border-2 border-brand-dark rounded-xl px-5 py-2.5 font-extrabold shadow-hardSm"><i class="fa-solid fa-helmet-safety mr-2"></i>Get Free Quote</button>
+    </div>
+    <button id="menuBtn" class="lg:hidden w-11 h-11 rounded-xl border-2 border-brand-dark bg-brand-yellow font-bold shadow-hardSm"><i class="fa-solid fa-bars text-lg"></i></button>
+  </div>
+  <div id="mobileMenu" class="lg:hidden hidden border-t-2 border-brand-dark bg-white px-5 py-4">
+    <div class="grid gap-2 font-bold">
+      <a href="#home" class="mnav py-2.5 px-3 rounded-lg hover:bg-yellow-100">🏠 Home</a>
+      <a href="#about" class="mnav py-2.5 px-3 rounded-lg hover:bg-yellow-100">🏗️ About Us</a>
+      <a href="#services" class="mnav py-2.5 px-3 rounded-lg hover:bg-yellow-100">🧰 Our Services</a>
+      <a href="#projects" class="mnav py-2.5 px-3 rounded-lg hover:bg-yellow-100">🏘️ Projects</a>
+      <a href="#why" class="mnav py-2.5 px-3 rounded-lg hover:bg-yellow-100">⭐ Why Choose Us</a>
+      <a href="#partners" class="mnav py-2.5 px-3 rounded-lg hover:bg-yellow-100">🤝 Partner With Us</a>
+      <a href="#contact" class="mnav py-2.5 px-3 rounded-lg hover:bg-yellow-100">📞 Contact</a>
+      <button onclick="openQuote()" class="mt-2 bg-brand-dark text-brand-yellow rounded-xl py-3 font-extrabold"><i class="fa-solid fa-file-signature mr-2"></i>GET FREE QUOTE</button>
+      <a href="tel:+263771561749" class="bg-brand-yellow border-2 border-brand-dark rounded-xl py-3 text-center font-extrabold"><i class="fa-solid fa-phone mr-2"></i>+263 771 561 749</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero-bg relative overflow-hidden">
+  <div class="hero-grid absolute inset-0"></div>
+  <div class="absolute -top-10 -right-10 w-72 h-72 bg-brand-yellow/20 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 left-0 w-96 h-40 bg-black/10 blur-3xl"></div>
+  <div class="max-w-7xl mx-auto px-5 pt-10 pb-8 lg:pt-16 lg:pb-14 grid lg:grid-cols-2 gap-10 items-center relative">
+    <div class="text-white">
+      <div class="reveal inline-flex items-center gap-2 bg-brand-dark text-brand-yellow text-[12px] sm:text-[13px] font-extrabold px-4 py-2 rounded-full border-2 border-brand-yellow shadow-lg">
+        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span> LICENSED BUILDERS • RUWA • HARARE • NATIONWIDE
+      </div>
+      <h1 class="reveal font-display leading-[.92] mt-4 text-[46px] sm:text-[66px] lg:text-[78px]">
+        <span class="outline-white text-white block">CONSTRUCTION</span>
+        <span class="outline-yellow text-brand-yellow block text-[68px] sm:text-[102px] lg:text-[118px]">MANIA</span>
+        <span class="inline-block mt-2 bg-brand-dark text-brand-yellow font-display text-[18px] sm:text-[24px] tracking-[.18em] px-4 py-2 rounded-lg border-2 border-brand-yellow">— ZIMBABWE —</span>
+      </h1>
+      <p class="reveal mt-5 text-[16px] sm:text-[18px] font-semibold text-white/95 max-w-xl">Professional Building & Construction Services. <span class="text-brand-yellow">Quality Construction • Professional Workmanship • Reliable Service.</span></p>
+      <p class="reveal mt-2 text-white/80 text-[14.5px] max-w-xl">From dream homes in Borrowdale to roads, schools & commercial complexes — we design, build & deliver on time, every time.</p>
+      <div class="reveal flex flex-wrap gap-3 mt-6">
+        <button onclick="openQuote()" class="btn-hard bg-brand-yellow text-brand-dark border-2 border-brand-dark rounded-xl px-7 py-3.5 font-extrabold shadow-hard"><i class="fa-solid fa-calculator mr-2"></i>Get Free Quote</button>
+        <a href="#services" class="btn-hard bg-white text-brand-dark border-2 border-brand-dark rounded-xl px-7 py-3.5 font-extrabold shadow-hard"><i class="fa-solid fa-trowel-bricks mr-2"></i>Explore Services</a>
+        <a href="https://wa.me/263771561749?text=Hello%20Construction%20Mania!%20I%20need%20a%20quote." target="_blank" class="btn-hard bg-[#25D366] text-white border-2 border-brand-dark rounded-xl px-6 py-3.5 font-extrabold shadow-hard"><i class="fa-brands fa-whatsapp text-xl"></i></a>
+      </div>
+      <div class="reveal flex items-center gap-4 mt-7">
+        <div class="flex -space-x-3">
+          <img src="https://i.pravatar.cc/80?img=12" class="w-10 h-10 rounded-full border-2 border-white" alt="">
+          <img src="https://i.pravatar.cc/80?img=32" class="w-10 h-10 rounded-full border-2 border-white" alt="">
+          <img src="https://i.pravatar.cc/80?img=56" class="w-10 h-10 rounded-full border-2 border-white" alt="">
+          <div class="w-10 h-10 rounded-full border-2 border-white bg-brand-dark text-brand-yellow text-[11px] font-extrabold flex items-center justify-center">250+</div>
+        </div>
+        <div class="text-[13px] leading-tight">
+          <div class="text-brand-yellow font-extrabold tracking-wide">★★★★★ 4.9/5 RATED</div>
+          <div class="text-white/90 font-semibold">Trusted by 250+ happy clients across Zimbabwe</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative reveal">
+      <div class="relative bg-white rounded-[26px] border-[3px] border-brand-dark shadow-hard overflow-hidden">
+        <div class="bg-brand-dark px-4 py-2.5 flex items-center justify-between">
+          <div class="flex gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500"></span><span class="w-3 h-3 rounded-full bg-yellow-400"></span><span class="w-3 h-3 rounded-full bg-green-500"></span></div>
+          <span class="text-brand-yellow text-[12px] font-extrabold tracking-widest"><i class="fa-solid fa-shield-halved mr-1"></i> TRUSTED SINCE 2012</span>
+        </div>
+        <img src="https://www.designarena.ai/u/05f5c882-7940-4ecf-ac29-e68ea6759f6b" alt="Construction Mania Mascot" class="w-full h-[320px] sm:h-[420px] object-cover object-top bg-brand-blue">
+        <div class="p-4 grid grid-cols-3 gap-3 bg-white">
+          <div class="text-center bg-[#F1F6FF] border-2 border-brand-dark rounded-xl py-2"><div class="font-display text-2xl"><span class="counter" data-target="250">0</span>+</div><div class="text-[11px] font-bold text-gray-600">PROJECTS DONE</div></div>
+          <div class="text-center bg-[#FFF7D6] border-2 border-brand-dark rounded-xl py-2"><div class="font-display text-2xl"><span class="counter" data-target="12">0</span>+</div><div class="text-[11px] font-bold text-gray-600">YEARS EXPERIENCE</div></div>
+          <div class="text-center bg-[#E8F8EE] border-2 border-brand-dark rounded-xl py-2"><div class="font-display text-2xl"><span class="counter" data-target="98">0</span>%</div><div class="text-[11px] font-bold text-gray-600">ON-TIME DELIVERY</div></div>
+        </div>
+      </div>
+      <div class="float absolute -left-3 sm:-left-6 top-16 bg-white border-2 border-brand-dark rounded-2xl px-4 py-3 shadow-hardSm flex items-center gap-3">
+        <div class="hammer-wiggle w-11 h-11 rounded-xl bg-brand-yellow border-2 border-brand-dark flex items-center justify-center text-xl"><i class="fa-solid fa-hammer"></i></div>
+        <div class="leading-tight"><div class="font-extrabold text-[13px]">Certified Builders</div><div class="text-[12px] text-green-600 font-bold"><i class="fa-solid fa-circle-check"></i> Verified & Insured</div></div>
+      </div>
+      <div class="float2 absolute -right-2 sm:-right-4 bottom-24 bg-brand-dark text-white border-2 border-brand-dark rounded-2xl px-4 py-3 shadow-hardYellow flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-brand-yellow text-brand-dark border-2 border-brand-yellow flex items-center justify-center text-xl"><i class="fa-solid fa-truck-fast"></i></div>
+        <div class="leading-tight"><div class="font-extrabold text-[13px] text-brand-yellow">Same-Day Site Visit</div><div class="text-[12px] text-white/80 font-semibold">Harare • Ruwa • Chitungwiza</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="relative bg-brand-yellow border-y-[3px] border-brand-dark py-3 overflow-hidden">
+    <div class="marquee font-display text-brand-dark text-[16px] sm:text-[19px] tracking-wider">
+      <span class="px-4 whitespace-nowrap">🏠 HOUSE CONSTRUCTION &nbsp; ★ &nbsp; 🏢 COMMERCIAL BUILDINGS &nbsp; ★ &nbsp; 🛣️ ROADS & DRAINAGE &nbsp; ★ &nbsp; 🏘️ PROPERTY DEVELOPMENT &nbsp; ★ &nbsp; 🧱 MATERIALS & EQUIPMENT HIRE &nbsp; ★ &nbsp; 🏠 HOUSE CONSTRUCTION &nbsp; ★ &nbsp; 🏢 COMMERCIAL BUILDINGS &nbsp; ★ &nbsp; 🛣️ ROADS & DRAINAGE &nbsp; ★ &nbsp; 🏘️ PROPERTY DEVELOPMENT &nbsp; ★ &nbsp; 🧱 MATERIALS & EQUIPMENT HIRE &nbsp; ★ &nbsp;</span>
+      <span class="px-4 whitespace-nowrap">🏠 HOUSE CONSTRUCTION &nbsp; ★ &nbsp; 🏢 COMMERCIAL BUILDINGS &nbsp; ★ &nbsp; 🛣️ ROADS & DRAINAGE &nbsp; ★ &nbsp; 🏘️ PROPERTY DEVELOPMENT &nbsp; ★ &nbsp; 🧱 MATERIALS & EQUIPMENT HIRE &nbsp; ★ &nbsp; 🏠 HOUSE CONSTRUCTION &nbsp; ★ &nbsp; 🏢 COMMERCIAL BUILDINGS &nbsp; ★ &nbsp; 🛣️ ROADS & DRAINAGE &nbsp; ★ &nbsp; 🏘️ PROPERTY DEVELOPMENT &nbsp; ★ &nbsp; 🧱 MATERIALS & EQUIPMENT HIRE &nbsp; ★ &nbsp;</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="max-w-7xl mx-auto px-5 py-14 lg:py-20">
+  <div class="grid lg:grid-cols-2 gap-10 items-start">
+    <div class="reveal relative">
+      <div class="grid grid-cols-2 gap-4">
+        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop" class="rounded-2xl border-[3px] border-brand-dark shadow-hard h-64 w-full object-cover" alt="Construction site">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop" class="rounded-2xl border-[3px] border-brand-dark shadow-hard h-64 w-full object-cover mt-8" alt="Steel works">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop" class="rounded-2xl border-[3px] border-brand-dark shadow-hard h-56 w-full object-cover -mt-2" alt="House plan">
+        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=800&auto=format&fit=crop" class="rounded-2xl border-[3px] border-brand-dark shadow-hard h-56 w-full object-cover mt-6" alt="Engineer">
+      </div>
+      <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 lg:left-8 lg:translate-x-0 bg-brand-dark text-white border-2 border-brand-dark rounded-2xl px-6 py-4 shadow-hardYellow flex items-center gap-4 whitespace-nowrap">
+        <span class="font-display text-5xl text-brand-yellow">12+</span>
+        <span class="text-[13px] font-bold leading-tight">YEARS OF<br>BUILDING<br>EXCELLENCE</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <span class="inline-block bg-brand-blue/10 text-brand-deep font-extrabold text-[12px] tracking-widest px-4 py-1.5 rounded-full border border-brand-blue/30">ABOUT CONSTRUCTION MANIA ZIMBABWE</span>
+      <h2 class="font-head font-black text-[30px] sm:text-[42px] leading-[1.05] mt-3">We Turn Your Vision Into <span class="bg-brand-yellow px-2 border-2 border-brand-dark rounded-lg inline-block -rotate-1">Solid Reality</span></h2>
+      <p class="mt-4 text-gray-600 leading-relaxed"><strong class="text-brand-dark">Construction Mania Zimbabwe</strong> is a professional construction company dedicated to delivering high-quality building, civil engineering, infrastructure development, and property development solutions across Zimbabwe.</p>
+      <p class="mt-3 text-gray-600 leading-relaxed">We are committed to transforming ideas into reality through innovative designs, quality materials, skilled workmanship, and reliable project management. Whether it's your dream home, commercial property, or large-scale infrastructure — we're your trusted partner.</p>
+      <div class="grid sm:grid-cols-2 gap-3 mt-6">
+        <div class="flex items-start gap-3 bg-white border-2 border-brand-dark rounded-xl p-3 shadow-hardSm"><span class="tick"><i class="fa-solid fa-check text-[13px]"></i></span><span class="text-[14px] font-semibold">Quality materials & skilled workmanship</span></div>
+        <div class="flex items-start gap-3 bg-white border-2 border-brand-dark rounded-xl p-3 shadow-hardSm"><span class="tick"><i class="fa-solid fa-check text-[13px]"></i></span><span class="text-[14px] font-semibold">Transparent pricing, no hidden costs</span></div>
+        <div class="flex items-start gap-3 bg-white border-2 border-brand-dark rounded-xl p-3 shadow-hardSm"><span class="tick"><i class="fa-solid fa-check text-[13px]"></i></span><span class="text-[14px] font-semibold">Timely delivery with project tracking</span></div>
+        <div class="flex items-start gap-3 bg-white border-2 border-brand-dark rounded-xl p-3 shadow-hardSm"><span class="tick"><i class="fa-solid fa-check text-[13px]"></i></span><span class="text-[14px] font-semibold">Free site visit & detailed quotation</span></div>
+      </div>
+      <div class="flex flex-wrap gap-3 mt-6">
+        <button onclick="openQuote()" class="btn-hard bg-brand-dark text-brand-yellow border-2 border-brand-dark rounded-xl px-6 py-3 font-extrabold shadow-hardSm">Start Your Project <i class="fa-solid fa-arrow-right ml-2"></i></button>
+        <a href="tel:+263771561749" class="btn-hard bg-white border-2 border-brand-dark rounded-xl px-6 py-3 font-extrabold shadow-hardSm flex items-center gap-3"><span class="w-9 h-9 rounded-full bg-green-100 flex items-center justify-center"><i class="fa-solid fa-phone text-green-600"></i></span><span class="text-left leading-tight text-[13px]">CALL US NOW<br><b class="text-[15px]">+263 771 561 749</b></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="bg-white border-y-[3px] border-brand-dark relative">
+  <div class="zig"></div>
+  <div class="max-w-7xl mx-auto px-5 py-14 lg:py-20">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <span class="inline-block bg-brand-dark text-brand-yellow font-extrabold text-[12px] tracking-widest px-4 py-1.5 rounded-full">OUR SERVICES</span>
+      <h2 class="font-head font-black text-[30px] sm:text-[44px] mt-3">Everything Construction, <span class="text-brand-deep">Under One Roof</span></h2>
+      <p class="text-gray-600 mt-2">Tap a service to see what's included, starting prices & timelines. All jobs include free inspection in Harare & Ruwa.</p>
+    </div>
+    <div class="flex gap-3 mt-8 overflow-x-auto pb-3 lg:flex-wrap lg:justify-center reveal" id="tabBar">
+      <button data-tab="res" class="tab-btn active whitespace-nowrap border-2 border-brand-dark rounded-xl px-5 py-2.5 font-extrabold text-[14px] bg-white flex items-center gap-2"><i class="fa-solid fa-house-chimney"></i> Residential</button>
+      <button data-tab="com" class="tab-btn whitespace-nowrap border-2 border-brand-dark rounded-xl px-5 py-2.5 font-extrabold text-[14px] bg-white flex items-center gap-2"><i class="fa-solid fa-building"></i> Commercial</button>
+      <button data-tab="civ" class="tab-btn whitespace-nowrap border-2 border-brand-dark rounded-xl px-5 py-2.5 font-extrabold text-[14px] bg-white flex items-center gap-2"><i class="fa-solid fa-road"></i> Civil & Roads</button>
+      <button data-tab="prop" class="tab-btn whitespace-nowrap border-2 border-brand-dark rounded-xl px-5 py-2.5 font-extrabold text-[14px] bg-white flex items-center gap-2"><i class="fa-solid fa-city"></i> Property Dev.</button>
+      <button data-tab="mat" class="tab-btn whitespace-nowrap border-2 border-brand-dark rounded-xl px-5 py-2.5 font-extrabold text-[14px] bg-white flex items-center gap-2"><i class="fa-solid fa-truck-ramp-box"></i> Materials & Hire</button>
+    </div>
+    <div id="tabPanels" class="mt-6 reveal">
+      <!-- Residential -->
+      <div data-panel="res" class="tab-panel grid lg:grid-cols-2 gap-6 bg-[#F6F9FF] border-[3px] border-brand-dark rounded-3xl p-5 sm:p-8 shadow-hard">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop" class="rounded-2xl border-2 border-brand-dark h-72 lg:h-full w-full object-cover" alt="">
+        <div>
+          <h3 class="font-head font-black text-2xl sm:text-3xl">🏠 Residential Construction</h3>
+          <p class="text-gray-600 mt-2 text-[15px]">Complete home builds from foundation to keys — plus renovations that add real value.</p>
+          <ul class="grid sm:grid-cols-2 gap-2 mt-4 text-[14px] font-semibold">
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ House construction & extensions</li>
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Modern home designs & plans</li>
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Roofing & ceiling installation</li>
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Tiling, flooring & painting</li>
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Plumbing & electrical</li>
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Renovations & decoration</li>
+          </ul>
+          <div class="flex flex-wrap items-center gap-3 mt-5">
+            <span class="bg-white border-2 border-brand-dark rounded-xl px-4 py-2 font-extrabold text-[14px]">From <span class="text-brand-deep">$380</span>/m² • 8–16 weeks</span>
+            <button onclick="openQuote('Residential Construction')" class="btn-hard bg-brand-yellow border-2 border-brand-dark rounded-xl px-5 py-2.5 font-extrabold shadow-hardSm">Get Quote</button>
+          </div>
+        </div>
+      </div>
+      <!-- Commercial -->
+      <div data-panel="com" class="tab-panel hidden grid lg:grid-cols-2 gap-6 bg-[#FFF8E1] border-[3px] border-brand-dark rounded-3xl p-5 sm:p-8 shadow-hard">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop" class="rounded-2xl border-2 border-brand-dark h-72 lg:h-full w-full object-cover" alt="">
+        <div>
+          <h3 class="font-head font-black text-2xl sm:text-3xl">🏢 Commercial Construction</h3>
+          <p class="text-gray-600 mt-2 text-[15px]">Profit-ready commercial spaces built to council & structural standards.</p>
+          <ul class="grid sm:grid-cols-2 gap-2 mt-4 text-[14px] font-semibold">
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Office buildings & complexes</li>
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Shopping centres & shops</li>
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Schools & educational facilities</li>
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Warehouses & industrial sheds</li>
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Business premises fit-outs</li>
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Structural steel works</li>
+          </ul>
+          <div class="flex flex-wrap items-center gap-3 mt-5">
+            <span class="bg-white border-2 border-brand-dark rounded-xl px-4 py-2 font-extrabold text-[14px]">From <span class="text-brand-deep">$450</span>/m² • Site assessment free</span>
+            <button onclick="openQuote('Commercial Construction')" class="btn-hard bg-brand-dark text-brand-yellow border-2 border-brand-dark rounded-xl px-5 py-2.5 font-extrabold shadow-hardSm">Get Quote</button>
+          </div>
+        </div>
+      </div>
+      <!-- Civil -->
+      <div data-panel="civ" class="tab-panel hidden grid lg:grid-cols-2 gap-6 bg-[#EDF7ED] border-[3px] border-brand-dark rounded-3xl p-5 sm:p-8 shadow-hard">
+        <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?q=80&w=1000&auto=format&fit=crop" class="rounded-2xl border-2 border-brand-dark h-72 lg:h-full w-full object-cover" alt="">
+        <div>
+          <h3 class="font-head font-black text-2xl sm:text-3xl">🛣️ Civil Engineering & Infrastructure</h3>
+          <p class="text-gray-600 mt-2 text-[15px]">Heavy-duty infrastructure for councils, developers, NGOs & private estates.</p>
+          <ul class="grid sm:grid-cols-2 gap-2 mt-4 text-[14px] font-semibold">
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Road construction & repairs</li>
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Drainage & storm-water systems</li>
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Earthworks & excavation</li>
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Concrete & retaining walls</li>
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Culverts, bridges & paving</li>
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Infrastructure development</li>
+          </ul>
+          <div class="flex flex-wrap items-center gap-3 mt-5">
+            <span class="bg-white border-2 border-brand-dark rounded-xl px-4 py-2 font-extrabold text-[14px]">Custom BOQ • Tender-ready quotes</span>
+            <button onclick="openQuote('Civil Engineering')" class="btn-hard bg-brand-yellow border-2 border-brand-dark rounded-xl px-5 py-2.5 font-extrabold shadow-hardSm">Request BOQ</button>
+          </div>
+        </div>
+      </div>
+      <!-- Property -->
+      <div data-panel="prop" class="tab-panel hidden grid lg:grid-cols-2 gap-6 bg-[#FFF1F0] border-[3px] border-brand-dark rounded-3xl p-5 sm:p-8 shadow-hard">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1000&auto=format&fit=crop" class="rounded-2xl border-2 border-brand-dark h-72 lg:h-full w-full object-cover" alt="">
+        <div>
+          <h3 class="font-head font-black text-2xl sm:text-3xl">🏘️ Property Development</h3>
+          <p class="text-gray-600 mt-2 text-[15px]">Turnkey developments — we handle land, approvals, build & handover.</p>
+          <ul class="grid sm:grid-cols-2 gap-2 mt-4 text-[14px] font-semibold">
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Residential estates & clusters</li>
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Commercial property projects</li>
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Land development & servicing</li>
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Turnkey construction solutions</li>
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Joint ventures with land owners</li>
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Investor-ready proposals</li>
+          </ul>
+          <div class="flex flex-wrap items-center gap-3 mt-5">
+            <span class="bg-white border-2 border-brand-dark rounded-xl px-4 py-2 font-extrabold text-[14px]">ROI focused • JV welcome</span>
+            <button onclick="openQuote('Property Development')" class="btn-hard bg-brand-dark text-brand-yellow border-2 border-brand-dark rounded-xl px-5 py-2.5 font-extrabold shadow-hardSm">Partner / Build</button>
+          </div>
+        </div>
+      </div>
+      <!-- Materials -->
+      <div data-panel="mat" class="tab-panel hidden grid lg:grid-cols-2 gap-6 bg-[#EEF2FF] border-[3px] border-brand-dark rounded-3xl p-5 sm:p-8 shadow-hard">
+        <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&w=1000&auto=format&fit=crop" class="rounded-2xl border-2 border-brand-dark h-72 lg:h-full w-full object-cover" alt="">
+        <div>
+          <h3 class="font-head font-black text-2xl sm:text-3xl">🧱 Materials & Equipment Hire</h3>
+          <p class="text-gray-600 mt-2 text-[15px]">Genuine materials at trade prices + reliable equipment with operators.</p>
+          <ul class="grid sm:grid-cols-2 gap-2 mt-4 text-[14px] font-semibold">
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Quality building materials supply</li>
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Scaffolding hire & erection</li>
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Concrete mixers, compactors</li>
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Steel, roofing & structural works</li>
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Transport & delivery in Harare</li>
+            <li class="bg-white border border-gray-200 rounded-lg px-3 py-2">✔ Tools & machinery hire</li>
+          </ul>
+          <div class="flex flex-wrap items-center gap-3 mt-5">
+            <span class="bg-white border-2 border-brand-dark rounded-xl px-4 py-2 font-extrabold text-[14px]">Daily / Weekly rates • Delivery available</span>
+            <button onclick="openQuote('Materials & Equipment Hire')" class="btn-hard bg-brand-yellow border-2 border-brand-dark rounded-xl px-5 py-2.5 font-extrabold shadow-hardSm">Hire Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROCESS -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+      <div class="reveal bg-brand-dark text-white rounded-2xl p-5 border-2 border-brand-dark relative overflow-hidden"><span class="font-display text-5xl text-white/10 absolute top-2 right-3">01</span><div class="w-12 h-12 rounded-xl bg-brand-yellow text-brand-dark flex items-center justify-center text-xl border-2 border-brand-yellow"><i class="fa-solid fa-clipboard-list"></i></div><h4 class="font-extrabold mt-3">Free Site Visit</h4><p class="text-[13px] text-white/70 mt-1">We inspect, measure & advise. Harare & Ruwa same-day.</p></div>
+      <div class="reveal bg-white rounded-2xl p-5 border-2 border-brand-dark shadow-hardSm relative overflow-hidden"><span class="font-display text-5xl text-black/5 absolute top-2 right-3">02</span><div class="w-12 h-12 rounded-xl bg-brand-blue text-white flex items-center justify-center text-xl border-2 border-brand-dark"><i class="fa-solid fa-file-invoice-dollar"></i></div><h4 class="font-extrabold mt-3">Transparent Quote</h4><p class="text-[13px] text-gray-600 mt-1">Detailed BOQ with materials, labour & timeline.</p></div>
+      <div class="reveal bg-white rounded-2xl p-5 border-2 border-brand-dark shadow-hardSm relative overflow-hidden"><span class="font-display text-5xl text-black/5 absolute top-2 right-3">03</span><div class="w-12 h-12 rounded-xl bg-brand-yellow text-brand-dark flex items-center justify-center text-xl border-2 border-brand-dark"><i class="fa-solid fa-helmet-safety"></i></div><h4 class="font-extrabold mt-3">Build & Supervise</h4><p class="text-[13px] text-gray-600 mt-1">Skilled teams + engineer supervision + photo updates.</p></div>
+      <div class="reveal bg-white rounded-2xl p-5 border-2 border-brand-dark shadow-hardSm relative overflow-hidden"><span class="font-display text-5xl text-black/5 absolute top-2 right-3">04</span><div class="w-12 h-12 rounded-xl bg-green-500 text-white flex items-center justify-center text-xl border-2 border-brand-dark"><i class="fa-solid fa-key"></i></div><h4 class="font-extrabold mt-3">Handover & Support</h4><p class="text-[13px] text-gray-600 mt-1">Snag-free handover + 6-month workmanship warranty.</p></div>
+    </div>
+  </div>
+  <div class="stripe h-[14px] border-t-[3px] border-brand-dark"></div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="max-w-7xl mx-auto px-5 py-14 lg:py-20">
+  <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 reveal">
+    <div>
+      <span class="inline-block bg-brand-yellow font-extrabold text-[12px] tracking-widest px-4 py-1.5 rounded-full border-2 border-brand-dark">RECENT PROJECTS</span>
+      <h2 class="font-head font-black text-[30px] sm:text-[44px] mt-3 leading-tight">Proof, Not Just Promises</h2>
+      <p class="text-gray-600">Click any project for scope, location & duration. Filter by type:</p>
+    </div>
+    <div class="flex flex-wrap gap-2" id="filterBar">
+      <button data-filter="all" class="filter-btn active border-2 border-brand-dark rounded-full px-4 py-1.5 text-[13px] font-extrabold bg-white">All</button>
+      <button data-filter="residential" class="filter-btn border-2 border-brand-dark rounded-full px-4 py-1.5 text-[13px] font-extrabold bg-white">Residential</button>
+      <button data-filter="commercial" class="filter-btn border-2 border-brand-dark rounded-full px-4 py-1.5 text-[13px] font-extrabold bg-white">Commercial</button>
+      <button data-filter="civil" class="filter-btn border-2 border-brand-dark rounded-full px-4 py-1.5 text-[13px] font-extrabold bg-white">Civil</button>
+      <button data-filter="renovation" class="filter-btn border-2 border-brand-dark rounded-full px-4 py-1.5 text-[13px] font-extrabold bg-white">Renovation</button>
+    </div>
+  </div>
+  <div id="projectGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-8"></div>
+</section>
+
+<!-- ESTIMATOR -->
+<section id="estimator" class="bg-brand-dark relative overflow-hidden border-y-[3px] border-brand-dark">
+  <div class="absolute inset-0 opacity-[.07]" style="background-image:radial-gradient(white 1.5px, transparent 1.5px); background-size:22px 22px;"></div>
+  <div class="max-w-7xl mx-auto px-5 py-14 lg:py-20 grid lg:grid-cols-2 gap-8 relative">
+    <div class="reveal text-white">
+      <span class="inline-block bg-brand-yellow text-brand-dark font-extrabold text-[12px] tracking-widest px-4 py-1.5 rounded-full border-2 border-brand-yellow">INSTANT COST ESTIMATOR</span>
+      <h2 class="font-head font-black text-[30px] sm:text-[44px] mt-3 leading-[1.05]">How Much Will Your <span class="text-brand-yellow">Build Cost?</span></h2>
+      <p class="text-white/70 mt-3">Move the sliders — get a realistic USD estimate instantly. Final quote after free site visit.</p>
+      <div class="bg-white/10 border border-white/15 rounded-2xl p-5 mt-6 space-y-5">
+        <div>
+          <label class="font-extrabold text-[13px] tracking-wide text-brand-yellow">PROJECT TYPE</label>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-2" id="estType">
+            <button data-val="residential" class="est-type bg-brand-yellow text-brand-dark border-2 border-brand-yellow rounded-xl py-2.5 font-extrabold text-[13px]">🏠 House</button>
+            <button data-val="commercial" class="est-type bg-white/10 border-2 border-white/20 rounded-xl py-2.5 font-extrabold text-[13px]">🏢 Commercial</button>
+            <button data-val="renovation" class="est-type bg-white/10 border-2 border-white/20 rounded-xl py-2.5 font-extrabold text-[13px]">🎨 Renovation</button>
+            <button data-val="civil" class="est-type bg-white/10 border-2 border-white/20 rounded-xl py-2.5 font-extrabold text-[13px]">🛣️ Civil</button>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between items-center"><label class="font-extrabold text-[13px] tracking-wide text-brand-yellow">FLOOR AREA</label><span class="bg-white text-brand-dark font-extrabold text-[14px] px-3 py-1 rounded-lg border-2 border-brand-yellow"><span id="areaVal">180</span> m²</span></div>
+          <input id="areaRange" type="range" min="40" max="1000" value="180" class="range w-full mt-3">
+          <div class="flex justify-between text-[11px] text-white/50 font-bold mt-1"><span>40 m² (cottage)</span><span>1000 m² (complex)</span></div>
+        </div>
+        <div>
+          <label class="font-extrabold text-[13px] tracking-wide text-brand-yellow">FINISH LEVEL</label>
+          <div class="grid grid-cols-3 gap-2 mt-2" id="estFinish">
+            <button data-val="standard" class="est-finish bg-white/10 border-2 border-white/20 rounded-xl py-2.5 font-extrabold text-[13px]">Standard</button>
+            <button data-val="premium" class="est-finish bg-brand-yellow text-brand-dark border-2 border-brand-yellow rounded-xl py-2.5 font-extrabold text-[13px]">Premium ★</button>
+            <button data-val="luxury" class="est-finish bg-white/10 border-2 border-white/20 rounded-xl py-2.5 font-extrabold text-[13px]">Luxury ✨</button>
+          </div>
+        </div>
+        <div>
+          <label class="font-extrabold text-[13px] tracking-wide text-brand-yellow">EXTRAS (optional)</label>
+          <div class="grid sm:grid-cols-2 gap-2 mt-2 text-[13px] font-bold">
+            <label class="flex items-center gap-2 bg-white/10 border border-white/15 rounded-xl px-3 py-2.5 cursor-pointer"><input type="checkbox" class="extra accent-yellow-400 w-4 h-4" value="4500"> Borehole +$4,500</label>
+            <label class="flex items-center gap-2 bg-white/10 border border-white/15 rounded-xl px-3 py-2.5 cursor-pointer"><input type="checkbox" class="extra accent-yellow-400 w-4 h-4" value="3800"> Solar System +$3,800</label>
+            <label class="flex items-center gap-2 bg-white/10 border border-white/15 rounded-xl px-3 py-2.5 cursor-pointer"><input type="checkbox" class="extra accent-yellow-400 w-4 h-4" value="5200"> Double Garage +$5,200</label>
+            <label class="flex items-center gap-2 bg-white/10 border border-white/15 rounded-xl px-3 py-2.5 cursor-pointer"><input type="checkbox" class="extra accent-yellow-400 w-4 h-4" value="3500"> Boundary Wall +$3,500</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="bg-white rounded-3xl border-[3px] border-brand-dark shadow-hardYellow p-6 sm:p-8 lg:sticky lg:top-28">
+        <div class="flex items-center justify-between">
+          <h3 class="font-head font-black text-xl">YOUR ESTIMATE</h3>
+          <span class="text-[11px] font-extrabold bg-green-100 text-green-700 px-3 py-1 rounded-full border border-green-300"><span class="w-1.5 h-1.5 bg-green-500 rounded-full inline-block animate-pulse"></span> LIVE</span>
+        </div>
+        <div class="mt-4 bg-brand-dark rounded-2xl p-5 text-center border-2 border-brand-dark">
+          <div class="text-white/60 text-[12px] font-bold tracking-widest">ESTIMATED RANGE (USD)</div>
+          <div class="font-display text-[34px] sm:text-[42px] text-brand-yellow leading-none mt-1">$<span id="estLow">0</span> – $<span id="estHigh">0</span></div>
+          <div class="text-white/60 text-[12px] mt-2">≈ $<span id="estPer">0</span>/m² • <span id="estDays">0</span> days est. duration</div>
+        </div>
+        <div class="mt-4">
+          <div class="flex justify-between text-[12px] font-extrabold"><span>Materials (60%)</span><span>Labour (25%)</span><span>Overheads (15%)</span></div>
+          <div class="flex h-4 rounded-full overflow-hidden border-2 border-brand-dark mt-1"><div class="bg-brand-blue" style="width:60%"></div><div class="bg-brand-yellow" style="width:25%"></div><div class="bg-brand-dark" style="width:15%"></div></div>
+        </div>
+        <ul class="text-[13px] font-semibold text-gray-600 mt-4 space-y-1.5">
+          <li><i class="fa-solid fa-circle-check text-green-600"></i> Includes materials, labour, supervision & VAT guidance</li>
+          <li><i class="fa-solid fa-circle-check text-green-600"></i> Free site visit to confirm final BOQ</li>
+          <li><i class="fa-solid fa-circle-check text-green-600"></i> Flexible stage payments available</li>
+        </ul>
+        <div class="grid grid-cols-2 gap-3 mt-5">
+          <button onclick="openQuote()" class="btn-hard bg-brand-yellow border-2 border-brand-dark rounded-xl py-3 font-extrabold shadow-hardSm">Get Exact Quote</button>
+          <a id="waQuote" target="_blank" href="https://wa.me/263771561749" class="btn-hard bg-[#25D366] text-white border-2 border-brand-dark rounded-xl py-3 font-extrabold shadow-hardSm text-center"><i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp Us</a>
+        </div>
+        <p class="text-[11px] text-gray-500 mt-3 text-center">Estimate is indicative. Final price depends on design, soil, location & finishes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section id="why" class="max-w-7xl mx-auto px-5 py-14 lg:py-20">
+  <div class="text-center max-w-2xl mx-auto reveal">
+    <span class="inline-block bg-brand-dark text-brand-yellow font-extrabold text-[12px] tracking-widest px-4 py-1.5 rounded-full">WHY CHOOSE US</span>
+    <h2 class="font-head font-black text-[30px] sm:text-[44px] mt-3">Built on Trust. Finished with Pride.</h2>
+  </div>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+    <div class="reveal card-hover bg-white border-2 border-brand-dark rounded-2xl p-5 shadow-hardSm"><div class="w-12 h-12 rounded-xl bg-brand-blue text-white flex items-center justify-center text-xl border-2 border-brand-dark"><i class="fa-solid fa-user-shield"></i></div><h4 class="font-extrabold mt-3">Professional & Reliable</h4><p class="text-[13px] text-gray-600 mt-1">Registered teams, written contracts, daily progress photos on WhatsApp.</p></div>
+    <div class="reveal card-hover bg-white border-2 border-brand-dark rounded-2xl p-5 shadow-hardSm"><div class="w-12 h-12 rounded-xl bg-brand-yellow flex items-center justify-center text-xl border-2 border-brand-dark"><i class="fa-solid fa-award"></i></div><h4 class="font-extrabold mt-3">Quality Workmanship</h4><p class="text-[13px] text-gray-600 mt-1">Engineer-supervised builds with 6-month warranty on workmanship.</p></div>
+    <div class="reveal card-hover bg-white border-2 border-brand-dark rounded-2xl p-5 shadow-hardSm"><div class="w-12 h-12 rounded-xl bg-green-500 text-white flex items-center justify-center text-xl border-2 border-brand-dark"><i class="fa-solid fa-tag"></i></div><h4 class="font-extrabold mt-3">Competitive Pricing</h4><p class="text-[13px] text-gray-600 mt-1">Trade-price materials + transparent BOQs. No hidden costs, ever.</p></div>
+    <div class="reveal card-hover bg-white border-2 border-brand-dark rounded-2xl p-5 shadow-hardSm"><div class="w-12 h-12 rounded-xl bg-purple-600 text-white flex items-center justify-center text-xl border-2 border-brand-dark"><i class="fa-solid fa-lightbulb"></i></div><h4 class="font-extrabold mt-3">Innovative Solutions</h4><p class="text-[13px] text-gray-600 mt-1">Modern designs, 3D plans, energy-saving & sustainable options.</p></div>
+    <div class="reveal card-hover bg-white border-2 border-brand-dark rounded-2xl p-5 shadow-hardSm"><div class="w-12 h-12 rounded-xl bg-orange-500 text-white flex items-center justify-center text-xl border-2 border-brand-dark"><i class="fa-solid fa-people-group"></i></div><h4 class="font-extrabold mt-3">Experienced Teams</h4><p class="text-[13px] text-gray-600 mt-1">Bricklayers, carpenters, electricians & plumbers with 10+ years.</p></div>
+    <div class="reveal card-hover bg-white border-2 border-brand-dark rounded-2xl p-5 shadow-hardSm"><div class="w-12 h-12 rounded-xl bg-pink-500 text-white flex items-center justify-center text-xl border-2 border-brand-dark"><i class="fa-solid fa-heart"></i></div><h4 class="font-extrabold mt-3">Customer Satisfaction</h4><p class="text-[13px] text-gray-600 mt-1">98% referral rate. We don't leave until you smile.</p></div>
+    <div class="reveal card-hover bg-white border-2 border-brand-dark rounded-2xl p-5 shadow-hardSm"><div class="w-12 h-12 rounded-xl bg-teal-600 text-white flex items-center justify-center text-xl border-2 border-brand-dark"><i class="fa-solid fa-clock"></i></div><h4 class="font-extrabold mt-3">Timely Delivery</h4><p class="text-[13px] text-gray-600 mt-1">Milestone schedule with penalties on us if we delay.</p></div>
+    <div class="reveal card-hover bg-brand-dark text-white border-2 border-brand-dark rounded-2xl p-5 shadow-hardYellow"><div class="font-display text-4xl text-brand-yellow"><span class="counter" data-target="98">0</span>%</div><h4 class="font-extrabold mt-1 text-brand-yellow">Happy Clients</h4><p class="text-[13px] text-white/70 mt-1">Join 250+ families & businesses who built with Mania.</p><button onclick="openQuote()" class="mt-3 w-full bg-brand-yellow text-brand-dark font-extrabold rounded-xl py-2 text-[13px]">JOIN THEM →</button></div>
+  </div>
+
+  <!-- Testimonials -->
+  <div class="mt-10 grid lg:grid-cols-3 gap-6 items-stretch">
+    <div class="reveal bg-brand-blue text-white rounded-3xl border-[3px] border-brand-dark shadow-hard p-7 flex flex-col justify-center">
+      <div class="font-display text-5xl text-brand-yellow">“ ”</div>
+      <h3 class="font-head font-black text-2xl leading-tight">What Zimbabwe Says About Us</h3>
+      <p class="text-white/80 text-[14px] mt-2">Real reviews from Harare, Ruwa, Bulawayo & Victoria Falls.</p>
+      <div class="flex gap-2 mt-4">
+        <button onclick="moveTest(-1)" class="w-11 h-11 rounded-xl bg-white text-brand-dark border-2 border-brand-dark font-bold hover:bg-brand-yellow"><i class="fa-solid fa-arrow-left"></i></button>
+        <button onclick="moveTest(1)" class="w-11 h-11 rounded-xl bg-brand-yellow text-brand-dark border-2 border-brand-dark font-bold hover:bg-white"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+      <div class="flex gap-2 mt-5" id="testDots"></div>
+    </div>
+    <div class="lg:col-span-2 reveal relative overflow-hidden">
+      <div id="testTrack" class="flex transition-transform duration-500 h-full"></div>
+    </div>
+  </div>
+
+  <!-- Vision Mission -->
+  <div class="grid md:grid-cols-3 gap-5 mt-10">
+    <div class="reveal bg-[#E8F3FF] border-[3px] border-brand-dark rounded-3xl p-6 shadow-hard card-hover"><div class="w-14 h-14 rounded-2xl bg-brand-blue text-white border-2 border-brand-dark flex items-center justify-center text-2xl"><i class="fa-solid fa-eye"></i></div><h3 class="font-head font-black text-xl mt-4">OUR VISION</h3><p class="text-[14px] text-gray-700 mt-2 leading-relaxed">To become a leading construction and infrastructure development company in Zimbabwe and across Africa by delivering sustainable, innovative, and world-class construction solutions.</p></div>
+    <div class="reveal bg-[#FFF6D6] border-[3px] border-brand-dark rounded-3xl p-6 shadow-hard card-hover"><div class="w-14 h-14 rounded-2xl bg-brand-yellow border-2 border-brand-dark flex items-center justify-center text-2xl"><i class="fa-solid fa-bullseye"></i></div><h3 class="font-head font-black text-xl mt-4">OUR MISSION</h3><p class="text-[14px] text-gray-700 mt-2 leading-relaxed">To build lasting relationships by providing affordable, high-quality, and sustainable construction services that contribute to community development and economic growth.</p></div>
+    <div class="reveal bg-brand-dark text-white border-[3px] border-brand-dark rounded-3xl p-6 shadow-hardYellow card-hover"><div class="w-14 h-14 rounded-2xl bg-white text-brand-dark border-2 border-brand-yellow flex items-center justify-center text-2xl"><i class="fa-solid fa-handshake"></i></div><h3 class="font-head font-black text-xl mt-4 text-brand-yellow">YOUR VISION. OUR EXPERTISE.</h3><p class="italic text-[14px] text-white/80 mt-2 leading-relaxed">"Together, we build." Building Today. Shaping Tomorrow — with integrity, safety, and pride in every brick.</p><div class="mt-4 flex gap-2 text-[12px] font-bold"><span class="bg-white/10 border border-white/20 px-3 py-1 rounded-full">Integrity</span><span class="bg-white/10 border border-white/20 px-3 py-1 rounded-full">Safety</span><span class="bg-white/10 border border-white/20 px-3 py-1 rounded-full">Quality</span></div></div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section id="partners" class="bg-[#FFF8E1] border-y-[3px] border-brand-dark">
+  <div class="max-w-7xl mx-auto px-5 py-14 lg:py-20 grid lg:grid-cols-2 gap-10">
+    <div class="reveal">
+      <span class="inline-block bg-brand-dark text-brand-yellow font-extrabold text-[12px] tracking-widest px-4 py-1.5 rounded-full">PARTNER WITH US 🤝</span>
+      <h2 class="font-head font-black text-[30px] sm:text-[42px] mt-3 leading-tight">Let's Build a Better Future, Together.</h2>
+      <p class="text-gray-700 mt-3">We welcome partnerships with <strong>investors, property developers, government institutions, NGOs, contractors, and international development organizations</strong> interested in construction, infrastructure, and property development in Zimbabwe.</p>
+      <div class="grid sm:grid-cols-2 gap-3 mt-6">
+        <div class="bg-white border-2 border-brand-dark rounded-xl p-4 shadow-hardSm"><i class="fa-solid fa-coins text-brand-deep text-xl"></i><h4 class="font-extrabold text-[14px] mt-2">Investors</h4><p class="text-[12.5px] text-gray-600">High-ROI housing & commercial JV opportunities.</p></div>
+        <div class="bg-white border-2 border-brand-dark rounded-xl p-4 shadow-hardSm"><i class="fa-solid fa-building-ngo text-green-600 text-xl"></i><h4 class="font-extrabold text-[14px] mt-2">NGOs & Government</h4><p class="text-[12.5px] text-gray-600">Schools, clinics, roads & community infrastructure.</p></div>
+        <div class="bg-white border-2 border-brand-dark rounded-xl p-4 shadow-hardSm"><i class="fa-solid fa-diagram-project text-orange-500 text-xl"></i><h4 class="font-extrabold text-[14px] mt-2">Developers</h4><p class="text-[12.5px] text-gray-600">Land servicing, turnkey estates & contracting.</p></div>
+        <div class="bg-white border-2 border-brand-dark rounded-xl p-4 shadow-hardSm"><i class="fa-solid fa-globe text-purple-600 text-xl"></i><h4 class="font-extrabold text-[14px] mt-2">International Orgs</h4><p class="text-[12.5px] text-gray-600">Compliant, audited delivery for donor projects.</p></div>
+      </div>
+      <div class="flex items-center gap-3 mt-6 bg-white border-2 border-dashed border-brand-dark rounded-xl p-4">
+        <img src="https://www.designarena.ai/u/05f5c882-7940-4ecf-ac29-e68ea6759f6b" class="w-14 h-14 rounded-xl border-2 border-brand-dark object-cover" alt="">
+        <p class="text-[13px] font-semibold">📄 Company profile, references & past project portfolio available on request. <a href="#contact" class="text-brand-deep underline">Contact us →</a></p>
+      </div>
+    </div>
+    <div class="reveal">
+      <form id="partnerForm" class="bg-white border-[3px] border-brand-dark rounded-3xl p-6 sm:p-8 shadow-hard">
+        <h3 class="font-head font-black text-2xl">Express Partnership Interest</h3>
+        <p class="text-[13px] text-gray-600">We respond within 24 hours on business days.</p>
+        <div class="grid sm:grid-cols-2 gap-3 mt-5">
+          <div><label class="text-[12px] font-extrabold">FULL NAME *</label><input required name="pname" placeholder="e.g. Tendai Moyo" class="mt-1 w-full border-2 border-gray-200 rounded-xl px-4 py-2.5 text-[14px]"></div>
+          <div><label class="text-[12px] font-extrabold">ORGANISATION</label><input name="porg" placeholder="Company / NGO" class="mt-1 w-full border-2 border-gray-200 rounded-xl px-4 py-2.5 text-[14px]"></div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-3 mt-3">
+          <div><label class="text-[12px] font-extrabold">EMAIL *</label><input required type="email" name="pemail" placeholder="you@company.co.zw" class="mt-1 w-full border-2 border-gray-200 rounded-xl px-4 py-2.5 text-[14px]"></div>
+          <div><label class="text-[12px] font-extrabold">PHONE *</label><input required name="pphone" placeholder="+263 ..." class="mt-1 w-full border-2 border-gray-200 rounded-xl px-4 py-2.5 text-[14px]"></div>
+        </div>
+        <div class="mt-3"><label class="text-[12px] font-extrabold">PARTNER TYPE *</label>
+          <select id="partnerType" class="mt-1 w-full border-2 border-gray-200 rounded-xl px-4 py-2.5 text-[14px] bg-white">
+            <option>Investor</option><option>Property Developer</option><option>Government Institution</option><option>NGO / Non-Profit</option><option>Contractor / Sub-contractor</option><option>International Development Organisation</option><option>Other</option>
+          </select>
+        </div>
+        <div class="mt-3"><label class="text-[12px] font-extrabold">TELL US ABOUT THE OPPORTUNITY *</label><textarea required rows="4" placeholder="Project location, size, timeline, budget range..." class="mt-1 w-full border-2 border-gray-200 rounded-xl px-4 py-2.5 text-[14px]"></textarea></div>
+        <button class="btn-hard w-full bg-brand-dark text-brand-yellow border-2 border-brand-dark rounded-xl py-3.5 font-extrabold mt-4 shadow-hardSm"><i class="fa-solid fa-paper-plane mr-2"></i>SUBMIT PARTNERSHIP REQUEST</button>
+        <p class="text-[11px] text-gray-500 text-center mt-2">Or email directly: constructionmaniazimbabwe@gmail.com</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="max-w-4xl mx-auto px-5 py-14">
+  <div class="text-center reveal"><h2 class="font-head font-black text-[28px] sm:text-[38px]">Common Questions, Clear Answers</h2><p class="text-gray-600 text-[14px]">Everything Harare clients ask before building.</p></div>
+  <div class="space-y-3 mt-7" id="faqWrap">
+    <div class="faq-item reveal bg-white border-2 border-brand-dark rounded-2xl overflow-hidden shadow-hardSm"><button class="faq-q w-full flex items-center justify-between gap-3 p-4 font-extrabold text-left text-[15px]">Do you offer free quotations and site visits? <span class="faq-icon w-8 h-8 rounded-full border-2 border-brand-dark flex items-center justify-center shrink-0"><i class="fa-solid fa-plus text-sm"></i></span></button><div class="faq-a px-4"><p class="pb-4 text-[14px] text-gray-600">Yes! Site visits and detailed BOQ quotations are FREE within Harare, Ruwa, Chitungwiza and Epworth. Outside Harare, we charge a small fuel fee deductible from your project.</p></div></div>
+    <div class="faq-item reveal bg-white border-2 border-brand-dark rounded-2xl overflow-hidden shadow-hardSm"><button class="faq-q w-full flex items-center justify-between gap-3 p-4 font-extrabold text-left text-[15px]">How do payments work? Do you require full payment upfront? <span class="faq-icon w-8 h-8 rounded-full border-2 border-brand-dark flex items-center justify-center shrink-0"><i class="fa-solid fa-plus text-sm"></i></span></button><div class="faq-a px-4"><p class="pb-4 text-[14px] text-gray-600">Never full upfront. We work on stage payments — e.g. 30% foundation, 30% wall plate, 30% roofing, 10% finishes. You pay as you see progress, with photos and sign-off at each stage.</p></div></div>
+    <div class="faq-item reveal bg-white border-2 border-brand-dark rounded-2xl overflow-hidden shadow-hardSm"><button class="faq-q w-full flex items-center justify-between gap-3 p-4 font-extrabold text-left text-[15px]">Can you work from my own plan or help with designs? <span class="faq-icon w-8 h-8 rounded-full border-2 border-brand-dark flex items-center justify-center shrink-0"><i class="fa-solid fa-plus text-sm"></i></span></button><div class="faq-a px-4"><p class="pb-4 text-[14px] text-gray-600">Both. Bring your architect's plan or Council-approved drawings and we'll build to spec. Or our designers can create modern plans + 3D visuals and help with Council submissions.</p></div></div>
+    <div class="faq-item reveal bg-white border-2 border-brand-dark rounded-2xl overflow-hidden shadow-hardSm"><button class="faq-q w-full flex items-center justify-between gap-3 p-4 font-extrabold text-left text-[15px]">Do you supply materials or should I buy? <span class="faq-icon w-8 h-8 rounded-full border-2 border-brand-dark flex items-center justify-center shrink-0"><i class="fa-solid fa-plus text-sm"></i></span></button><div class="faq-a px-4"><p class="pb-4 text-[14px] text-gray-600">We recommend our supply-and-fix service — we source genuine cement, bricks, timber and steel at trade prices with receipts. Prefer labour-only? That's fine too.</p></div></div>
+    <div class="faq-item reveal bg-white border-2 border-brand-dark rounded-2xl overflow-hidden shadow-hardSm"><button class="faq-q w-full flex items-center justify-between gap-3 p-4 font-extrabold text-left text-[15px]">Which areas do you serve? <span class="faq-icon w-8 h-8 rounded-full border-2 border-brand-dark flex items-center justify-center shrink-0"><i class="fa-solid fa-plus text-sm"></i></span></button><div class="faq-a px-4"><p class="pb-4 text-[14px] text-gray-600">Based in Zimre Park, Ruwa — we serve all of Harare (Borrowdale, Glen Lorne, Kuwadzana, Budiriro, etc.), plus Bulawayo, Victoria Falls, Mutare and nationwide for larger projects.</p></div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="bg-brand-dark border-t-[3px] border-brand-dark relative overflow-hidden">
+  <div class="stripe h-[14px]"></div>
+  <div class="max-w-7xl mx-auto px-5 py-14 lg:py-20">
+    <div class="text-center reveal"><span class="inline-block bg-brand-yellow text-brand-dark font-extrabold text-[12px] tracking-widest px-4 py-1.5 rounded-full border-2 border-brand-yellow">CONTACT US 📞</span>
+      <h2 class="font-head font-black text-[30px] sm:text-[44px] text-white mt-3">Let's Discuss Your Project</h2>
+      <p class="text-white/70">Call, WhatsApp or send the form — we reply fast.</p>
+    </div>
+    <div class="grid sm:grid-cols-3 gap-4 mt-8 reveal">
+      <a href="https://maps.google.com/?q=Zimre+Park+Ruwa+Zimbabwe" target="_blank" class="bg-white rounded-2xl border-2 border-brand-yellow p-5 flex gap-4 items-start card-hover"><span class="w-12 h-12 rounded-xl bg-red-100 border-2 border-brand-dark flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-location-dot text-red-600"></i></span><span><b class="text-[14px]">Visit Us</b><br><span class="text-[13px] text-gray-600 font-semibold">7946 Lion Road, Zimre Park,<br>Ruwa, Zimbabwe</span></span></a>
+      <a href="mailto:constructionmaniazimbabwe@gmail.com" class="bg-white rounded-2xl border-2 border-brand-yellow p-5 flex gap-4 items-start card-hover"><span class="w-12 h-12 rounded-xl bg-blue-100 border-2 border-brand-dark flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-envelope text-brand-deep"></i></span><span class="min-w-0"><b class="text-[14px]">Email Us</b><br><span class="text-[13px] text-gray-600 font-semibold break-all">constructionmaniazimbabwe@gmail.com</span></span></a>
+      <a href="tel:+263771561749" class="bg-brand-yellow rounded-2xl border-2 border-brand-yellow p-5 flex gap-4 items-start card-hover"><span class="w-12 h-12 rounded-xl bg-brand-dark text-brand-yellow flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-phone"></i></span><span><b class="text-[14px]">Call / WhatsApp</b><br><span class="text-[15px] font-black">+263 771 561 749</span><br><span class="text-[11px] font-bold bg-green-600 text-white px-2 py-[1px] rounded-full">● Available now</span></span></a>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-6 mt-6">
+      <form id="contactForm" class="reveal bg-white rounded-3xl border-[3px] border-brand-yellow p-6 sm:p-8 shadow-hardYellow">
+        <h3 class="font-head font-black text-2xl">Send Us a Message</h3>
+        <div class="grid sm:grid-cols-2 gap-3 mt-4">
+          <div><label class="text-[12px] font-extrabold">YOUR NAME *</label><input id="cName" placeholder="Full name" class="mt-1 w-full border-2 border-gray-200 rounded-xl px-4 py-2.5 text-[14px]"></div>
+          <div><label class="text-[12px] font-extrabold">PHONE *</label><input id="cPhone" placeholder="+263 ..." class="mt-1 w-full border-2 border-gray-200 rounded-xl px-4 py-2.5 text-[14px]"></div>
+        </div>
+        <div class="mt-3"><label class="text-[12px] font-extrabold">EMAIL</label><input id="cEmail" type="email" placeholder="you@email.com" class="mt-1 w-full border-2 border-gray-200 rounded-xl px-4 py-2.5 text-[14px]"></div>
+        <div class="grid sm:grid-cols-2 gap-3 mt-3">
+          <div><label class="text-[12px] font-extrabold">SERVICE NEEDED *</label><select id="cService" class="mt-1 w-full border-2 border-gray-200 rounded-xl px-4 py-2.5 text-[14px] bg-white"><option>Residential Construction</option><option>Commercial Construction</option><option>Civil Engineering & Infrastructure</option><option>Property Development</option><option>Building Materials & Equipment</option><option>Renovation / Repair</option></select></div>
+          <div><label class="text-[12px] font-extrabold">LOCATION</label><input id="cLoc" placeholder="e.g. Borrowdale, Harare" class="mt-1 w-full border-2 border-gray-200 rounded-xl px-4 py-2.5 text-[14px]"></div>
+        </div>
+        <div class="mt-3"><label class="text-[12px] font-extrabold">PROJECT DETAILS *</label><textarea id="cMsg" rows="4" placeholder="Tell us: what do you want to build? Size? When to start?" class="mt-1 w-full border-2 border-gray-200 rounded-xl px-4 py-2.5 text-[14px]"></textarea></div>
+        <p id="cError" class="hidden text-[13px] font-bold text-red-600 mt-2"></p>
+        <button class="btn-hard w-full bg-brand-dark text-brand-yellow rounded-xl py-3.5 font-extrabold mt-4 border-2 border-brand-dark"><i class="fa-solid fa-paper-plane mr-2"></i>SEND MESSAGE</button>
+        <div class="flex gap-3 mt-3">
+          <a href="https://wa.me/263771561749?text=Hello%20Construction%20Mania!%20I%20need%20a%20quote." target="_blank" class="flex-1 text-center bg-[#25D366] text-white border-2 border-brand-dark rounded-xl py-2.5 font-extrabold text-[14px]"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+          <a href="tel:+263771561749" class="flex-1 text-center bg-white border-2 border-brand-dark rounded-xl py-2.5 font-extrabold text-[14px]"><i class="fa-solid fa-phone"></i> Call Now</a>
+        </div>
+      </form>
+      <div class="reveal flex flex-col gap-4">
+        <div class="bg-white/10 border border-white/15 rounded-3xl p-2 overflow-hidden">
+          <iframe title="Map - Zimre Park Ruwa" src="https://www.google.com/maps?q=Zimre+Park,+Ruwa,+Zimbabwe&output=embed" class="w-full h-[280px] rounded-2xl border-0" loading="lazy"></iframe>
+        </div>
+        <div class="bg-brand-yellow border-[3px] border-brand-yellow rounded-3xl p-6 flex items-center gap-5">
+          <img src="https://www.designarena.ai/u/05f5c882-7940-4ecf-ac29-e68ea6759f6b" class="w-20 h-20 rounded-2xl border-2 border-brand-dark object-cover hidden sm:block" alt="">
+          <div><h4 class="font-display text-2xl leading-none">BUILDING TODAY.<br>SHAPING TOMORROW.</h4><p class="text-[13px] font-bold mt-1 italic">Your vision. Our expertise. Together, we build.</p><div class="flex gap-2 mt-3"><a href="#" class="w-9 h-9 rounded-full bg-brand-dark text-brand-yellow flex items-center justify-center"><i class="fa-brands fa-facebook-f"></i></a><a href="#" class="w-9 h-9 rounded-full bg-brand-dark text-brand-yellow flex items-center justify-center"><i class="fa-brands fa-instagram"></i></a><a href="https://wa.me/263771561749" class="w-9 h-9 rounded-full bg-brand-dark text-brand-yellow flex items-center justify-center"><i class="fa-brands fa-whatsapp"></i></a><a href="mailto:constructionmaniazimbabwe@gmail.com" class="w-9 h-9 rounded-full bg-brand-dark text-brand-yellow flex items-center justify-center"><i class="fa-solid fa-envelope"></i></a></div></div>
+        </div>
+        <div class="bg-white rounded-2xl border-2 border-brand-yellow p-4 flex items-center justify-between">
+          <div class="text-[13px] font-bold"><i class="fa-solid fa-clock text-brand-deep"></i> Mon–Fri 7:30–17:30 • Sat 8:00–13:00 • Sun Closed</div>
+          <span class="text-[11px] font-extrabold bg-green-100 text-green-700 px-3 py-1 rounded-full border border-green-400 whitespace-nowrap">OPEN NOW</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#040F1D] text-white">
+  <div class="max-w-7xl mx-auto px-5 py-12 grid md:grid-cols-4 gap-8">
+    <div>
+      <div class="flex items-center gap-3"><img src="https://www.designarena.ai/u/05f5c882-7940-4ecf-ac29-e68ea6759f6b" class="w-12 h-12 rounded-xl border-2 border-brand-yellow object-cover" alt=""><div class="font-display text-lg leading-none">CONSTRUCTION<br><span class="text-brand-yellow">MANIA ZIMBABWE</span></div></div>
+      <p class="text-[13px] text-white/60 mt-3">Professional building, civil engineering & property development across Zimbabwe. Quality • Reliability • Pride.</p>
+      <form id="newsForm" class="mt-4 flex"><input id="newsInput" placeholder="Your email for tips & offers" class="flex-1 bg-white/10 border border-white/20 rounded-l-xl px-3 py-2.5 text-[13px]"><button class="bg-brand-yellow text-brand-dark font-extrabold px-4 rounded-r-xl text-[13px]">JOIN</button></form>
+    </div>
+    <div><h4 class="font-extrabold text-brand-yellow text-[13px] tracking-widest">QUICK LINKS</h4><ul class="mt-3 space-y-2 text-[14px] font-semibold text-white/70"><li><a href="#home" class="hover:text-brand-yellow">Home</a></li><li><a href="#about" class="hover:text-brand-yellow">About Us</a></li><li><a href="#projects" class="hover:text-brand-yellow">Projects</a></li><li><a href="#estimator" class="hover:text-brand-yellow">Cost Estimator</a></li><li><a href="#partners" class="hover:text-brand-yellow">Partner With Us</a></li><li><a href="#contact" class="hover:text-brand-yellow">Contact</a></li></ul></div>
+    <div><h4 class="font-extrabold text-brand-yellow text-[13px] tracking-widest">OUR SERVICES</h4><ul class="mt-3 space-y-2 text-[14px] font-semibold text-white/70"><li>Residential Construction</li><li>Commercial Construction</li><li>Roads & Drainage</li><li>Property Development</li><li>Materials & Equipment Hire</li></ul></div>
+    <div><h4 class="font-extrabold text-brand-yellow text-[13px] tracking-widest">GET IN TOUCH</h4><ul class="mt-3 space-y-2 text-[13.5px] font-semibold text-white/70"><li><i class="fa-solid fa-location-dot text-brand-yellow mr-2"></i>7946 Lion Road, Zimre Park, Ruwa</li><li><a href="mailto:constructionmaniazimbabwe@gmail.com" class="hover:text-brand-yellow break-all"><i class="fa-solid fa-envelope text-brand-yellow mr-2"></i>constructionmaniazimbabwe@gmail.com</a></li><li><a href="tel:+263771561749" class="hover:text-brand-yellow"><i class="fa-solid fa-phone text-brand-yellow mr-2"></i>+263 771 561 749</a></li></ul><button onclick="openQuote()" class="mt-4 w-full bg-brand-yellow text-brand-dark font-extrabold rounded-xl py-2.5 text-[14px]">GET FREE QUOTE →</button></div>
+  </div>
+  <div class="border-t border-white/10 py-4 text-center text-[12.5px] text-white/50 px-5">© 2026 Construction Mania Zimbabwe • Building Today. Shaping Tomorrow. • Your vision. Our expertise. Together, we build.</div>
+</footer>
+
+<!-- FLOATING -->
+<a href="https://wa.me/263771561749?text=Hello%20Construction%20Mania!%20I%20need%20a%20quote%20for%20my%20project." target="_blank" class="fixed bottom-5 right-5 z-50 w-14 h-14 rounded-full bg-[#25D366] border-[3px] border-brand-dark shadow-hard flex items-center justify-center text-white text-2xl hover:scale-110 transition"><i class="fa-brands fa-whatsapp"></i><span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-white animate-ping"></span></a>
+<button id="toTop" class="fixed bottom-5 left-5 z-50 w-12 h-12 rounded-xl bg-brand-dark text-brand-yellow border-2 border-brand-yellow shadow-lg hidden items-center justify-center"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- QUOTE MODAL -->
+<div id="quoteModal" class="fixed inset-0 z-[80] hidden items-center justify-center p-4 modal-bg">
+  <div class="bg-white w-full max-w-2xl rounded-3xl border-[3px] border-brand-dark shadow-hard overflow-hidden max-h-[92vh] overflow-y-auto">
+    <div class="bg-brand-dark px-6 py-4 flex items-center justify-between sticky top-0"><div class="font-display text-brand-yellow text-xl tracking-wide"><i class="fa-solid fa-helmet-safety mr-2"></i>FREE QUOTE REQUEST</div><button onclick="closeQuote()" class="w-9 h-9 rounded-full bg-white/10 text-white border border-white/20 hover:bg-red-500"><i class="fa-solid fa-xmark"></i></button></div>
+    <div class="p-6">
+      <div class="flex items-center justify-between mb-6" id="qSteps">
+        <div class="step active flex items-center gap-2" data-s="1"><span class="step-dot">1</span><span class="text-[12px] font-extrabold hidden sm:block">PROJECT</span></div><div class="flex-1 h-[3px] bg-gray-200 mx-2 rounded"></div>
+        <div class="step flex items-center gap-2" data-s="2"><span class="step-dot">2</span><span class="text-[12px] font-extrabold hidden sm:block">CONTACT</span></div><div class="flex-1 h-[3px] bg-gray-200 mx-2 rounded"></div>
+        <div class="step flex items-center gap-2" data-s="3"><span class="step-dot">3</span><span class="text-[12px] font-extrabold hidden sm:block">REVIEW</span></div>
+      </div>
+      <div id="qStep1">
+        <label class="text-[12px] font-extrabold">WHAT DO YOU WANT TO BUILD? *</label>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-2" id="qServiceGrid">
+          <button class="q-svc border-2 border-brand-dark rounded-xl p-3 text-[13px] font-extrabold bg-brand-yellow">🏠 House</button>
+          <button class="q-svc border-2 border-gray-200 rounded-xl p-3 text-[13px] font-extrabold bg-white">🏢 Commercial</button>
+          <button class="q-svc border-2 border-gray-200 rounded-xl p-3 text-[13px] font-extrabold bg-white">🎨 Renovation</button>
+          <button class="q-svc border-2 border-gray-200 rounded-xl p-3 text-[13px] font-extrabold bg-white">🛣️ Roads/Civil</button>
+          <button class="q-svc border-2 border-gray-200 rounded-xl p-3 text-[13px] font-extrabold bg-white">🏘️ Development</button>
+          <button class="q-svc border-2 border-gray-200 rounded-xl p-3 text-[13px] font-extrabold bg-white">🧱 Materials/Hire</button>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-3 mt-4">
+          <div><label class="text-[12px] font-extrabold">LOCATION *</label><input id="qLoc" placeholder="e.g. Zimre Park, Ruwa" class="mt-1 w-full border-2 border-gray-200 rounded-xl px-4 py-2.5 text-[14px]"></div>
+          <div><label class="text-[12px] font-extrabold">WHEN TO START?</label><select id="qWhen" class="mt-1 w-full border-2 border-gray-200 rounded-xl px-4 py-2.5 text-[14px] bg-white"><option>ASAP / Urgent</option><option>Within 1 month</option><option>1–3 months</option><option>Just researching</option></select></div>
+        </div>
+        <div class="mt-3"><label class="text-[12px] font-extrabold">BRIEF DESCRIPTION</label><textarea id="qDesc" rows="3" placeholder="e.g. 4-bed double storey, 220m² in Borrowdale..." class="mt-1 w-full border-2 border-gray-200 rounded-xl px-4 py-2.5 text-[14px]"></textarea></div>
+      </div>
+      <div id="qStep2" class="hidden">
+        <div class="grid sm:grid-cols-2 gap-3">
+          <div><label class="text-[12px] font-extrabold">FULL NAME *</label><input id="qName" placeholder="Your name" class="mt-1 w-full border-2 border-gray-200 rounded-xl px-4 py-2.5 text-[14px]"></div>
+          <div><label class="text-[12px] font-extrabold">PHONE / WHATSAPP *</label><input id="qPhone" placeholder="+263 ..." class="mt-1 w-full border-2 border-gray-200 rounded-xl px-4 py-2.5 text-[14px]"></div>
+        </div>
+        <div class="mt-3"><label class="text-[12px] font-extrabold">EMAIL</label><input id="qEmail" placeholder="you@email.com" class="mt-1 w-full border-2 border-gray-200 rounded-xl px-4 py-2.5 text-[14px]"></div>
+        <div class="mt-3 bg-blue-50 border border-blue-200 rounded-xl p-3 text-[13px] font-semibold text-blue-900"><i class="fa-solid fa-lock"></i> Your details are safe. We only call about your quote — no spam, ever.</div>
+      </div>
+      <div id="qStep3" class="hidden">
+        <div class="bg-gray-50 border-2 border-dashed border-gray-300 rounded-2xl p-4 text-[14px]" id="qReview"></div>
+        <div id="qSuccess" class="hidden text-center py-6"><div class="w-20 h-20 mx-auto rounded-full bg-green-500 border-[3px] border-brand-dark flex items-center justify-center text-white text-3xl"><i class="fa-solid fa-check"></i></div><h3 class="font-head font-black text-2xl mt-4">Request Received! 🎉</h3><p class="text-gray-600 text-[14px] mt-1">Our engineer will call/WhatsApp you within <b>2 business hours</b>.</p><p class="text-[13px] font-bold mt-2">Need it faster? <a href="tel:+263771561749" class="text-brand-deep underline">Call +263 771 561 749</a></p></div>
+      </div>
+      <p id="qError" class="hidden text-[13px] font-bold text-red-600 mt-3"></p>
+      <div class="flex gap-3 mt-5" id="qNav">
+        <button id="qBack" onclick="qGo(-1)" class="hidden flex-1 bg-white border-2 border-brand-dark rounded-xl py-3 font-extrabold">← BACK</button>
+        <button id="qNext" onclick="qGo(1)" class="flex-[2] bg-brand-dark text-brand-yellow border-2 border-brand-dark rounded-xl py-3 font-extrabold">CONTINUE →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECT LIGHTBOX -->
+<div id="lightbox" class="fixed inset-0 z-[80] hidden items-center justify-center p-4 modal-bg">
+  <div class="bg-white w-full max-w-3xl rounded-3xl border-[3px] border-brand-dark overflow-hidden">
+    <div class="relative"><img id="lbImg" src="" class="w-full h-64 sm:h-80 object-cover" alt=""><button onclick="closeLB()" class="absolute top-3 right-3 w-10 h-10 rounded-full bg-brand-dark text-white border-2 border-white"><i class="fa-solid fa-xmark"></i></button><span id="lbCat" class="absolute bottom-3 left-3 bg-brand-yellow border-2 border-brand-dark text-[12px] font-extrabold px-3 py-1 rounded-full"></span></div>
+    <div class="p-6"><h3 id="lbTitle" class="font-head font-black text-2xl"></h3><p id="lbDesc" class="text-gray-600 text-[14px] mt-2"></p><div id="lbMeta" class="flex flex-wrap gap-2 mt-4"></div><div class="flex gap-3 mt-5"><button onclick="closeLB();openQuote()" class="flex-1 bg-brand-yellow border-2 border-brand-dark rounded-xl py-3 font-extrabold">I Want Similar →</button><a href="https://wa.me/263771561749" target="_blank" class="flex-1 text-center bg-brand-dark text-brand-yellow border-2 border-brand-dark rounded-xl py-3 font-extrabold">Ask on WhatsApp</a></div></div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast" class="toast fixed bottom-6 left-1/2 -translate-x-1/2 z-[90] bg-brand-dark text-white border-2 border-brand-yellow rounded-2xl px-5 py-3.5 font-bold text-[14px] shadow-2xl flex items-center gap-3 max-w-[92vw]"><span id="toastIcon" class="w-9 h-9 rounded-full bg-green-500 flex items-center justify-center shrink-0"><i class="fa-solid fa-check"></i></span><span id="toastMsg">Done!</span></div>
+
+<script>
+// ---------- NAV ----------
+const menuBtn=document.getElementById('menuBtn'), mobileMenu=document.getElementById('mobileMenu');
+menuBtn.addEventListener('click',()=>{mobileMenu.classList.toggle('hidden');});
+document.querySelectorAll('.mnav').forEach(a=>a.addEventListener('click',()=>mobileMenu.classList.add('hidden')));
+const toTop=document.getElementById('toTop');
+window.addEventListener('scroll',()=>{
+  toTop.classList.toggle('hidden',window.scrollY<600);
+  toTop.classList.toggle('flex',window.scrollY>=600);
+  // scrollspy
+  const secs=['home','about','services','projects','why','partners','contact'];
+  let cur='home';
+  secs.forEach(id=>{const el=document.getElementById(id); if(el && window.scrollY>=el.offsetTop-160) cur=id;});
+  document.querySelectorAll('.nav-link').forEach(l=>l.classList.toggle('active',l.dataset.spy===cur));
+});
+toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+// ---------- REVEAL & COUNTERS ----------
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in'); io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const cio=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting) return; const el=e.target, t=+el.dataset.target; let c=0; const step=Math.max(1,Math.ceil(t/60));
+  const iv=setInterval(()=>{c+=step; if(c>=t){c=t;clearInterval(iv);} el.textContent=c;},30); cio.unobserve(el);
+}),{threshold:.5});
+document.querySelectorAll('.counter').forEach(el=>cio.observe(el));
+
+// ---------- TABS ----------
+document.querySelectorAll('.tab-btn').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.tab-btn').forEach(x=>x.classList.remove('active')); b.classList.add('active');
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.toggle('hidden',p.dataset.panel!==b.dataset.tab));
+}));
+
+// ---------- PROJECTS ----------
+const projects=[
+ {cat:'residential',title:'Modern 4-Bed Double Storey — Borrowdale',img:'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=900&auto=format&fit=crop',loc:'Borrowdale, Harare',dur:'5 months',cost:'$128k',desc:'Full turnkey build: foundation, double-storey brickwork, concrete slab, aluminium windows, fitted kitchen, 2 ensuites, borehole & paving.'},
+ {cat:'commercial',title:'Msasa Shopping Complex — 8 Shops + Offices',img:'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=900&auto=format&fit=crop',loc:'Msasa, Harare',dur:'8 months',cost:'$340k',desc:'Steel + brick commercial block with parking, ablutions, shop fronts, signage beams and full electrical reticulation.'},
+ {cat:'residential',title:'12-Unit Cluster Development — Ruwa',img:'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=900&auto=format&fit=crop',loc:'Zimre Park, Ruwa',dur:'10 months',cost:'$520k',desc:'Land servicing, roads, water, sewer + 12 three-bed units with solar geysers. Investor JV project — sold out off-plan.'},
+ {cat:'civil',title:'Road & Drainage Upgrade — Chitungwiza',img:'https://images.unsplash.com/photo-1545558014-8692077e9b5c?q=80&w=900&auto=format&fit=crop',loc:'Chitungwiza',dur:'3 months',cost:'$86k',desc:'2.1km gravel-to-tar upgrade, culverts, side drains & speed humps. Council-approved with compaction testing.'},
+ {cat:'commercial',title:'Pomona Warehouse — 900m² Steel Portal',img:'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=900&auto=format&fit=crop',loc:'Pomona, Harare',dur:'4 months',cost:'$195k',desc:'Structural steel warehouse with IBR roofing, roller doors, office mezzanine, boundary wall & truck turning circle.'},
+ {cat:'renovation',title:'Full Home Renovation — Glen Lorne',img:'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=900&auto=format&fit=crop',loc:'Glen Lorne, Harare',dur:'6 weeks',cost:'$24k',desc:'Re-roofing, re-tiling, new kitchen & bathrooms, replumbing, rewiring, interior + exterior repaint.'},
+ {cat:'civil',title:'Primary School Block — Mabvuku (NGO)',img:'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=900&auto=format&fit=crop',loc:'Mabvuku, Harare',dur:'5 months',cost:'$112k',desc:'Double classroom block + ablutions + borehole + perimeter fence. Donor-funded, audited delivery.'},
+ {cat:'residential',title:'Cottage + Boundary Wall — Budiriro',img:'https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=900&auto=format&fit=crop',loc:'Budiriro, Harare',dur:'7 weeks',cost:'$18k',desc:'2-bed cottage, septic tank, precast wall & gate. Perfect for rental income.'},
+ {cat:'renovation',title:'Office Fit-Out — CBD Harare',img:'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=900&auto=format&fit=crop',loc:'Harare CBD',dur:'4 weeks',cost:'$31k',desc:'Partitioning, ceilings, tiling, painting, networking & aircon for 300m² corporate office.'}
+];
+const grid=document.getElementById('projectGrid');
+function renderProjects(f='all'){
+  grid.innerHTML='';
+  projects.filter(p=>f==='all'||p.cat===f).forEach((p,i)=>{
+    const d=document.createElement('div');
+    d.className='reveal in bg-white border-2 border-brand-dark rounded-2xl overflow-hidden shadow-hardSm card-hover cursor-pointer';
+    d.innerHTML=`<div class="relative overflow-hidden"><img src="${p.img}" loading="lazy" class="h-52 w-full object-cover hover:scale-105 transition duration-500" alt="${p.title}"><span class="absolute top-3 left-3 bg-brand-dark text-brand-yellow text-[11px] font-extrabold px-3 py-1 rounded-full uppercase">${p.cat}</span><span class="absolute bottom-3 right-3 bg-white/95 border border-brand-dark text-[11px] font-extrabold px-3 py-1 rounded-full"><i class="fa-solid fa-location-dot text-red-500"></i> ${p.loc}</span></div><div class="p-4"><h3 class="font-extrabold text-[15px] leading-snug">${p.title}</h3><div class="flex items-center gap-3 text-[12px] font-bold text-gray-500 mt-2"><span><i class="fa-solid fa-clock"></i> ${p.dur}</span><span class="text-green-700"><i class="fa-solid fa-tag"></i> ${p.cost}</span></div><span class="inline-block mt-3 text-[13px] font-extrabold text-brand-deep">View Details →</span></div>`;
+    d.addEventListener('click',()=>openLB(p));
+    grid.appendChild(d);
+  });
+}
+renderProjects();
+document.querySelectorAll('.filter-btn').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.filter-btn').forEach(x=>x.classList.remove('active')); b.classList.add('active'); renderProjects(b.dataset.filter);
+}));
+function openLB(p){
+  document.getElementById('lbImg').src=p.img;
+  document.getElementById('lbTitle').textContent=p.title;
+  document.getElementById('lbDesc').textContent=p.desc;
+  document.getElementById('lbCat').textContent=p.cat.toUpperCase();
+  document.getElementById('lbMeta').innerHTML=`<span class="bg-gray-100 border border-gray-300 text-[12px] font-bold px-3 py-1.5 rounded-full"><i class="fa-solid fa-location-dot text-red-500"></i> ${p.loc}</span><span class="bg-gray-100 border border-gray-300 text-[12px] font-bold px-3 py-1.5 rounded-full"><i class="fa-solid fa-clock"></i> ${p.dur}</span><span class="bg-green-100 border border-green-300 text-green-800 text-[12px] font-bold px-3 py-1.5 rounded-full">${p.cost} project value</span><span class="bg-yellow-100 border border-yellow-400 text-[12px] font-bold px-3 py-1.5 rounded-full">★ 6-month warranty</span>`;
+  const lb=document.getElementById('lightbox'); lb.classList.remove('hidden'); lb.classList.add('flex'); document.body.style.overflow='hidden';
+}
+function closeLB(){const lb=document.getElementById('lightbox'); lb.classList.add('hidden'); lb.classList.remove('flex'); document.body.style.overflow='';}
+document.getElementById('lightbox').addEventListener('click',e=>{if(e.target.id==='lightbox') closeLB();});
+
+// ---------- ESTIMATOR ----------
+let estType='residential', estFinish='premium';
+const rates={residential:{standard:380,premium:520,luxury:750},commercial:{standard:450,premium:620,luxury:880},renovation:{standard:120,premium:180,luxury:260},civil:{standard:220,premium:320,luxury:480}};
+const daysPer={residential:1.1,commercial:1.3,renovation:.5,civil:.9};
+document.querySelectorAll('.est-type').forEach(b=>b.addEventListener('click',()=>{
+  estType=b.dataset.val;
+  document.querySelectorAll('.est-type').forEach(x=>{x.className='est-type bg-white/10 border-2 border-white/20 rounded-xl py-2.5 font-extrabold text-[13px]';});
+  b.className='est-type bg-brand-yellow text-brand-dark border-2 border-brand-yellow rounded-xl py-2.5 font-extrabold text-[13px]'; calc();
+}));
+document.querySelectorAll('.est-finish').forEach(b=>b.addEventListener('click',()=>{
+  estFinish=b.dataset.val;
+  document.querySelectorAll('.est-finish').forEach(x=>{x.className='est-finish bg-white/10 border-2 border-white/20 rounded-xl py-2.5 font-extrabold text-[13px]';});
+  b.className='est-finish bg-brand-yellow text-brand-dark border-2 border-brand-yellow rounded-xl py-2.5 font-extrabold text-[13px]'; calc();
+}));
+const areaRange=document.getElementById('areaRange');
+areaRange.addEventListener('input',()=>{
+  const p=(areaRange.value-areaRange.min)/(areaRange.max-areaRange.min)*100;
+  areaRange.style.setProperty('--p',p+'%'); document.getElementById('areaVal').textContent=areaRange.value; calc();
+});
+areaRange.style.setProperty('--p',((180-40)/(1000-40)*100)+'%');
+document.querySelectorAll('.extra').forEach(c=>c.addEventListener('change',calc));
+function calc(){
+  const area=+areaRange.value, rate=rates[estType][estFinish];
+  let base=area*rate, extras=0;
+  document.querySelectorAll('.extra:checked').forEach(c=>extras+=+c.value);
+  const total=base+extras;
+  const low=Math.round(total*.88), high=Math.round(total*1.12);
+  document.getElementById('estLow').textContent=low.toLocaleString();
+  document.getElementById('estHigh').textContent=high.toLocaleString();
+  document.getElementById('estPer').textContent=Math.round(total/area).toLocaleString();
+  document.getElementById('estDays').textContent=Math.round(area*daysPer[estType]);
+  document.getElementById('waQuote').href=`https://wa.me/263771561749?text=${encodeURIComponent(`Hello Construction Mania! My estimate: ${estType} ${area}m² ${estFinish} ≈ $${low.toLocaleString()}–$${high.toLocaleString()}. Please send exact quote.`)}`;
+}
+calc();
+
+// ---------- TESTIMONIALS ----------
+const tests=[
+ {n:'Tendai Mukono',l:'Borrowdale, Harare • 4-Bed House',t:'From foundation to keys, they handled everything. Daily WhatsApp photos, no stories, finished 2 weeks early. My neighbours all ask who built it!',img:'https://i.pravatar.cc/100?img=12',s:5},
+ {n:'Rudo Chikafu',l:'Zimre Park, Ruwa • Cluster Unit',t:'Transparent BOQ, every dollar accounted for. Quality tiling and roofing — one year later, zero cracks, zero leaks. Truly professional.',img:'https://i.pravatar.cc/100?img=47',s:5},
+ {n:'Eng. Farai Dube',l:'Chitungwiza • Road Project',t:'We contracted them for drainage and road works. Proper compaction, proper levels, proper documentation. Council passed inspection first time.',img:'https://i.pravatar.cc/100?img=53',s:5},
+ {n:'Sarah & Mike Bennett',l:'Victoria Falls • Lodge Renovation',t:'They renovated our 8-room lodge while we operated. Minimal disruption, stunning finishes, bookings doubled. Worth every cent.',img:'https://i.pravatar.cc/100?img=45',s:5}
+];
+let ti=0, timer;
+const track=document.getElementById('testTrack'), dots=document.getElementById('testDots');
+function renderTest(){
+  track.innerHTML=tests.map(x=>`<div class="min-w-full sm:min-w-[50%] lg:min-w-[50%] px-2"><div class="bg-white border-2 border-brand-dark rounded-2xl p-5 shadow-hardSm h-full"><div class="text-brand-yellow font-extrabold">${'★'.repeat(x.s)}</div><p class="text-[14px] text-gray-700 mt-2 leading-relaxed">"${x.t}"</p><div class="flex items-center gap-3 mt-4"><img src="${x.img}" class="w-11 h-11 rounded-full border-2 border-brand-dark" alt=""><div><div class="font-extrabold text-[14px]">${x.n}</div><div class="text-[12px] text-gray-500 font-semibold">${x.l}</div></div><i class="fa-solid fa-circle-check text-green-500 ml-auto"></i></div></div></div>`).join('');
+  dots.innerHTML=tests.map((_,i)=>`<span class="dot ${i===ti?'active':''}" onclick="goTest(${i})"></span>`).join('');
+  updateTest();
+}
+function updateTest(){track.style.transform=`translateX(-${ti*50}%)`; if(window.innerWidth<640) track.style.transform=`translateX(-${ti*100}%)`; document.querySelectorAll('#testDots .dot').forEach((d,i)=>d.classList.toggle('active',i===ti));}
+function moveTest(d){ti=(ti+d+tests.length)%tests.length; updateTest(); restart();}
+function goTest(i){ti=i; updateTest(); restart();}
+function restart(){clearInterval(timer); timer=setInterval(()=>{ti=(ti+1)%tests.length; updateTest();},5000);}
+renderTest(); restart();
+window.addEventListener('resize',updateTest);
+
+// ---------- FAQ ----------
+document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>{
+  const item=q.parentElement, was=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!was) item.classList.add('open');
+}));
+
+// ---------- TOAST ----------
+function toast(msg,ok=true){
+  document.getElementById('toastMsg').textContent=msg;
+  document.getElementById('toastIcon').className='w-9 h-9 rounded-full flex items-center justify-center shrink-0 '+(ok?'bg-green-500':'bg-red-500');
+  document.getElementById('toastIcon').innerHTML=ok?'<i class="fa-solid fa-check"></i>':'<i class="fa-solid fa-xmark"></i>';
+  const t=document.getElementById('toast'); t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),3500);
+}
+
+// ---------- FORMS ----------
+document.getElementById('contactForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const n=document.getElementById('cName').value.trim(), p=document.getElementById('cPhone').value.trim(), m=document.getElementById('cMsg').value.trim();
+  const err=document.getElementById('cError');
+  if(n.length<2){err.textContent='⚠ Please enter your full name.'; err.classList.remove('hidden'); return;}
+  if(p.length<7){err.textContent='⚠ Please enter a valid phone number so we can call you back.'; err.classList.remove('hidden'); return;}
+  if(m.length<10){err.textContent='⚠ Tell us a bit more about your project (at least 10 characters).'; err.classList.remove('hidden'); return;}
+  err.classList.add('hidden'); e.target.reset();
+  toast('Message sent! We\'ll call you back within 2 hours. ✅');
+});
+document.getElementById('partnerForm').addEventListener('submit',e=>{e.preventDefault(); e.target.reset(); toast('Partnership request received! Check your email soon. 🤝');});
+document.getElementById('newsForm').addEventListener('submit',e=>{e.preventDefault(); const v=document.getElementById('newsInput').value; if(!v.includes('@')){toast('Please enter a valid email.',false);return;} document.getElementById('newsInput').value=''; toast('Subscribed! Welcome to the Mania family. 🎉');});
+
+// ---------- QUOTE MODAL ----------
+let qStep=1, qSvc='House';
+document.querySelectorAll('.q-svc').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.q-svc').forEach(x=>{x.classList.remove('bg-brand-yellow','border-brand-dark'); x.classList.add('bg-white','border-gray-200');});
+  b.classList.add('bg-brand-yellow','border-brand-dark'); b.classList.remove('bg-white','border-gray-200'); qSvc=b.textContent.trim();
+}));
+function openQuote(preset){
+  if(preset){document.querySelectorAll('.q-svc').forEach(x=>{const on=x.textContent.toLowerCase().includes(preset.split(' ')[0].toLowerCase()); x.classList.toggle('bg-brand-yellow',on); x.classList.toggle('border-brand-dark',on); x.classList.toggle('bg-white',!on); if(on) qSvc=x.textContent.trim();});}
+  qStep=1; showQ();
+  const m=document.getElementById('quoteModal'); m.classList.remove('hidden'); m.classList.add('flex'); document.body.style.overflow='hidden';
+}
+function closeQuote(){const m=document.getElementById('quoteModal'); m.classList.add('hidden'); m.classList.remove('flex'); document.body.style.overflow=''; document.getElementById('qSuccess').classList.add('hidden'); document.getElementById('qNav').classList.remove('hidden');}
+function showQ(){
+  [1,2,3].forEach(i=>document.getElementById('qStep'+i).classList.toggle('hidden',i!==qStep));
+  document.querySelectorAll('#qSteps .step').forEach(s=>{const n=+s.dataset.s; s.classList.toggle('active',n===qStep); s.classList.toggle('done',n<qStep); if(n<qStep) s.querySelector('.step-dot').innerHTML='<i class="fa-solid fa-check"></i>'; else s.querySelector('.step-dot').textContent=n;});
+  document.getElementById('qBack').classList.toggle('hidden',qStep===1);
+  document.getElementById('qNext').textContent=qStep===3?'SUBMIT REQUEST ✓':'CONTINUE →';
+  document.getElementById('qError').classList.add('hidden');
+  if(qStep===3){
+    document.getElementById('qReview').innerHTML=`<b>🏗️ Service:</b> ${qSvc}<br><b>📍 Location:</b> ${document.getElementById('qLoc').value||'—'}<br><b>📅 Start:</b> ${document.getElementById('qWhen').value}<br><b>📝 Brief:</b> ${document.getElementById('qDesc').value||'—'}<br><b>👤 Name:</b> ${document.getElementById('qName').value}<br><b>📞 Phone:</b> ${document.getElementById('qPhone').value}`;
+  }
+}
+function qGo(d){
+  const err=document.getElementById('qError');
+  if(d===1 && qStep===1 && !document.getElementById('qLoc').value.trim()){err.textContent='⚠ Please enter your project location.'; err.classList.remove('hidden'); return;}
+  if(d===1 && qStep===2){
+    if(document.getElementById('qName').value.trim().length<2){err.textContent='⚠ Please enter your name.'; err.classList.remove('hidden'); return;}
+    if(document.getElementById('qPhone').value.trim().length<7){err.textContent='⚠ Please enter a valid phone number.'; err.classList.remove('hidden'); return;}
+  }
+  if(d===1 && qStep===3){
+    document.getElementById('qReview').classList.add('hidden'); document.getElementById('qSuccess').classList.remove('hidden'); document.getElementById('qNav').classList.add('hidden'); toast('Quote request sent! We\'ll contact you shortly. ✅'); return;
+  }
+  qStep=Math.min(3,Math.max(1,qStep+d)); showQ();
+}
+document.getElementById('quoteModal').addEventListener('click',e=>{if(e.target.id==='quoteModal') closeQuote();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeQuote(); closeLB();}});
+</script>
+</body>
+</html>
